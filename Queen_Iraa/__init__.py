@@ -25,7 +25,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-
+import asyncio
 import logging
 import os
 import sys
@@ -309,17 +309,21 @@ motor = motor_asyncio.AsyncIOMotorClient(MONGO_DB_URL)
 db = motor[MONGO_DB]
 engine = AIOEngine(motor, MONGO_DB)
 print("[INFO]: INITIALZING AIOHTTP SESSION")
-aiohttpsession = ClientSession()
+#aiohttpsession = ClientSession()
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT")
-arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
-loop = asyncio.get_event_loop()
+#arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
+#loop = asyncio.get_event_loop()
 print("[QUEENIRAA]: Connecting To GEEZ/RAM • Data Center • DC 5 • PostgreSQL Database")
-ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
+#ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
 print("[QUEENIRAA]: Connecting To GEEZ/RAM • Queen_Iraa Userbot (t.me/ramsupportt)")
-timeout = httpx.Timeout(40)
-http = httpx.AsyncClient(http2=True, timeout=timeout)
+#timeout = httpx.Timeout(40)
+#http = httpx.AsyncClient(http2=True, timeout=timeout)
 
+aiohttpsession = ClientSession()
+# ARQ Client
+arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+loop = asyncio.get_event_loop()
 
 async def get_entity(client, entity):
     entity_client = client
