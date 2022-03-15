@@ -144,6 +144,7 @@ if ENV:
     BOT_NAME = os.environ.get("BOT_NAME", True) # Name Of your Bot.4
     MONGO_DB = "Queen_Iraa"
     ARQ_API_URL = "https://thearq.tech"
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY")
     GOOGLE_CHROME_BIN = "/usr/bin/google-chrome"
     CHROME_DRIVER = "/usr/bin/chromedriver"
     BOT_API_URL = os.environ.get('BOT_API_URL', "https://api.telegram.org/bot")
