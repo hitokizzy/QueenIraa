@@ -1,1 +1,1 @@
-worker : python3 -m QueenIraa
+worker: python3 -m QueenIraa
