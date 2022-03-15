@@ -321,10 +321,11 @@ print("[QUEENIRAA]: Connecting To GEEZ/RAM • Queen_Iraa Userbot (t.me/ramsuppo
 #timeout = httpx.Timeout(40)
 #http = httpx.AsyncClient(http2=True, timeout=timeout)
 
-aiohttpsession = ClientSession()
+#aiohttpsession = ClientSession()
 # ARQ Client
-arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
-loop = asyncio.get_event_loop()
+#arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
+#loop = asyncio.get_event_loop()
+
 
 async def get_entity(client, entity):
     entity_client = client
