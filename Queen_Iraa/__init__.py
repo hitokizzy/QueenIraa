@@ -313,6 +313,7 @@ aiohttpsession = ClientSession()
 # ARQ Client
 print("[INFO]: INITIALIZING ARQ CLIENT")
 arq = ARQ("https://thearq.tech", "YIECCC-NAJARO-OLLREW-SJSRIP-ARQ", aiohttpsession)
+loop = asyncio.get_event_loop()
 print("[QUEENIRAA]: Connecting To GEEZ/RAM • Data Center • DC 5 • PostgreSQL Database")
 ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
 print("[QUEENIRAA]: Connecting To GEEZ/RAM • Queen_Iraa Userbot (t.me/ramsupportt)")
