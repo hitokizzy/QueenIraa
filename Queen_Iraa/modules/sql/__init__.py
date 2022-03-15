@@ -33,7 +33,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 import os
 
-from EmikoRobot import DATABASE_URL
+from Queen_Iraa import DATABASE_URL
 
 #code from Queen Iraa
 DB_URL = os.getenv("DATABASE_URL")  # or other relevant config var
