@@ -36,12 +36,12 @@ import os
 from EmikoRobot import DATABASE_URL
 
 #code from Queen Iraa
-DATABASE_URL = os.getenv("DATABASE_URL")  # or other relevant config var
-if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
-    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
+DB_URL = os.getenv("DATABASE_URL")  # or other relevant config var
+if DB_URL and DB_URL.startswith("postgres://"):
+    DB_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 def start() -> scoped_session:
-    engine = create_engine(DATABASE_URL, client_encoding="utf8")
+    engine = create_engine(DB_URL, client_encoding="utf8")
     BASE.metadata.bind = engine
     BASE.metadata.create_all(engine)
     return scoped_session(sessionmaker(bind=engine, autoflush=True))
