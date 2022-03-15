@@ -20,7 +20,7 @@ from QueenIraa import (
     INFOPIC,
     sw,
     StartTime,
-    KInit
+    IraaINIT
 )
 from QueenIraa.__main__ import STATS, USER_INFO, TOKEN
 from QueenIraa.modules.sql import SESSION

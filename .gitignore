@@ -1,12 +1,12 @@
-Queen-Iraa/config.py
-Queen-Iraa/*.session
-Queen-Iraa/*.session-journal
-Queen-Iraa/config.ini
+QueenIraa/config.py
+QueenIraa/*.session
+QueenIraa/*.session-journal
+QueenIraa/config.ini
 *.pyc
 .project
 .pydevproject
 .directory
-Queen-Iraa/modules/helper_funcs/temp.txt
+QueenIraa/modules/helper_funcs/temp.txt
 start-3.6.bat
 *.session
 kangsticker.png
@@ -22,4 +22,4 @@ config.ini
 *.log
 shell_output.txt
 .vs
-Queen-Iraa/elevated_users.json
+QueenIraa/elevated_users.json

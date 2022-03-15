@@ -5,7 +5,7 @@ from .helper_funcs.misc import upload_text
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CallbackContext, CommandHandler
 from psycopg2 import errors as sqlerrors
-from QueenIraa import KInit, dispatcher, DEV_USERS, OWNER_ID, log
+from QueenIraa import IraaINIT, dispatcher, DEV_USERS, OWNER_ID, log
 
 class ErrorsDict(dict):
     "A custom dict to store errors and their count"
@@ -31,10 +31,10 @@ def error_callback(update: Update, context: CallbackContext):
         return
 
     e = html.escape(f"{context.error}")
-    if e.find(KInit.TOKEN) != -1:
-        e = e.replace(KInit.TOKEN, "TOKEN")
+    if e.find(IraaINIT.TOKEN) != -1:
+        e = e.replace(IraaINIT.TOKEN, "TOKEN")
 
-    if update.effective_chat.type != "channel" and KInit.DEBUG:
+    if update.effective_chat.type != "channel" and IraaINIT.DEBUG:
         try:
             context.bot.send_message(update.effective_chat.id, 
             f"<b>Sorry I ran into an error!</b>\n<b>Error</b>: <code>{e}</code>\n<i>This incident has been logged. No further action is required.</i>",

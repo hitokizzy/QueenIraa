@@ -2,11 +2,11 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, scoped_session
 
-from QueenIraa import DB_URI, KInit, log
+from QueenIraa import DB_URI, IraaINIT, log
 
 
 def start() -> scoped_session:
-    engine = create_engine(DB_URI, client_encoding="utf8", echo=KInit.DEBUG)
+    engine = create_engine(DB_URI, client_encoding="utf8", echo=IraaINIT.DEBUG)
     log.info("[PostgreSQL] Connecting to database......")
     BASE.metadata.bind = engine
     BASE.metadata.create_all(engine)

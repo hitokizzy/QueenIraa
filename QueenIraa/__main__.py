@@ -15,7 +15,7 @@ from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 
 from QueenIraa import (
-    KInit,
+    IraaINIT,
     dispatcher,
     updater,
     TOKEN,
@@ -693,7 +693,7 @@ def main():
         iraaINIT.bot_username = dispatcher.bot.username
         iraaINIT.bot_name = dispatcher.bot.first_name
         updater.start_polling(timeout=15, read_latency=4, allowed_updates=Update.ALL_TYPES,
-                              drop_pending_updates=KInit.DROP_UPDATES)
+                              drop_pending_updates=IraaINIT.DROP_UPDATES)
     if len(argv) not in (1, 3, 4):
         telethn.disconnect()
     else:

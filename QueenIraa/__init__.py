@@ -101,51 +101,51 @@ class iraaINIT:
                 return sw
 
 
-KInit = iraaINIT(parser=queenconfig)
+IraaINIT = iraaINIT(parser=queenconfig)
 
-SYS_ADMIN = KInit.SYS_ADMIN
-OWNER_ID = KInit.OWNER_ID
-OWNER_USERNAME = KInit.OWNER_USERNAME
-APP_ID = KInit.APP_ID
-API_HASH = KInit.API_HASH
-WEBHOOK = KInit.WEBHOOK
-URL = KInit.URL
-CERT_PATH = KInit.CERT_PATH
-PORT = KInit.PORT
-INFOPIC = KInit.INFOPIC
-DEL_CMDS = KInit.DEL_CMDS
-ALLOW_EXCL = KInit.ALLOW_EXCL
-CUSTOM_CMD = KInit.CUSTOM_CMD
-BAN_STICKER = KInit.BAN_STICKER
-TOKEN = KInit.TOKEN
-DB_URI = KInit.DB_URI
-LOAD = KInit.LOAD
-MESSAGE_DUMP = KInit.MESSAGE_DUMP
-GBAN_LOGS = KInit.GBAN_LOGS
-NO_LOAD = KInit.NO_LOAD
+SYS_ADMIN = IraaINIT.SYS_ADMIN
+OWNER_ID = IraaINIT.OWNER_ID
+OWNER_USERNAME = IraaINIT.OWNER_USERNAME
+APP_ID = IraaINIT.APP_ID
+API_HASH = IraaINIT.API_HASH
+WEBHOOK = IraaINIT.WEBHOOK
+URL = IraaINIT.URL
+CERT_PATH = IraaINIT.CERT_PATH
+PORT = IraaINIT.PORT
+INFOPIC = IraaINIT.INFOPIC
+DEL_CMDS = IraaINIT.DEL_CMDS
+ALLOW_EXCL = IraaINIT.ALLOW_EXCL
+CUSTOM_CMD = IraaINIT.CUSTOM_CMD
+BAN_STICKER = IraaINIT.BAN_STICKER
+TOKEN = IraaINIT.TOKEN
+DB_URI = IraaINIT.DB_URI
+LOAD = IraaINIT.LOAD
+MESSAGE_DUMP = IraaINIT.MESSAGE_DUMP
+GBAN_LOGS = IraaINIT.GBAN_LOGS
+NO_LOAD = IraaINIT.NO_LOAD
 SUDO_USERS = [OWNER_ID] + get_user_list("sudos")
 DEV_USERS = [OWNER_ID] + get_user_list("devs")
 SUPPORT_USERS = get_user_list("supports")
 GEEZRAM_USERS = get_user_list("GEEZRAM")
 WHITELIST_USERS = get_user_list("whitelists")
 SPAMMERS = get_user_list("spammers")
-spamwatch_api = KInit.spamwatch_api
-CASH_API_KEY = KInit.CASH_API_KEY
-TIME_API_KEY = KInit.TIME_API_KEY
-WALL_API = KInit.WALL_API
-LASTFM_API_KEY = KInit.LASTFM_API_KEY
-CF_API_KEY = KInit.CF_API_KEY
+spamwatch_api = IraaINIT.spamwatch_api
+CASH_API_KEY = IraaINIT.CASH_API_KEY
+TIME_API_KEY = IraaINIT.TIME_API_KEY
+WALL_API = IraaINIT.WALL_API
+LASTFM_API_KEY = IraaINIT.LASTFM_API_KEY
+CF_API_KEY = IraaINIT.CF_API_KEY
 
 # SpamWatch
-sw = KInit.init_sw()
+sw = IraaINIT.init_sw()
 
 from QueenIraa.modules.sql import SESSION
 
-if not KInit.DROP_UPDATES:
-    updater = tg.Updater(token=TOKEN, base_url=KInit.BOT_API_URL, base_file_url=KInit.BOT_API_FILE_URL, workers=min(32, os.cpu_count() + 4), request_kwargs={"read_timeout": 10, "connect_timeout": 10}, persistence=PostgresPersistence(session=SESSION))
+if not IraaINIT.DROP_UPDATES:
+    updater = tg.Updater(token=TOKEN, base_url=IraaINIT.BOT_API_URL, base_file_url=IraaINIT.BOT_API_FILE_URL, workers=min(32, os.cpu_count() + 4), request_kwargs={"read_timeout": 10, "connect_timeout": 10}, persistence=PostgresPersistence(session=SESSION))
     
 else:
-    updater = tg.Updater(token=TOKEN, base_url=KInit.BOT_API_URL, base_file_url=KInit.BOT_API_FILE_URL, workers=min(32, os.cpu_count() + 4), request_kwargs={"read_timeout": 10, "connect_timeout": 10})
+    updater = tg.Updater(token=TOKEN, base_url=IraaINIT.BOT_API_URL, base_file_url=IraaINIT.BOT_API_FILE_URL, workers=min(32, os.cpu_count() + 4), request_kwargs={"read_timeout": 10, "connect_timeout": 10})
     
 telethn = TelegramClient(MemorySession(), APP_ID, API_HASH)
 dispatcher = updater.dispatcher
