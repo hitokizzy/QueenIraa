@@ -1,6 +1,6 @@
 # QueenIraa
 
-<h1 align="center"><img width="35px">RAM UBOT
+<h1 align="center"><img width="35px">QUEEN IRAA
 <p align="center"><img src="https://telegra.ph/file/8bec435499aed65a6c89d.png" width="500"></p>
 <p align="center">
 <p align="center">
