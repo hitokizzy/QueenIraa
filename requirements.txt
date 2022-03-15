@@ -45,7 +45,7 @@ pykeyboard==0.1.2
 aiofiles==0.8.0
 hachoir==3.1.2
 bing_image_downloader==1.1.1
-pytz==2022.3
+pytz
 html2text==2020.1.16
 NumPy==1.21.3
 opencv-python-headless==4.5.4.58
