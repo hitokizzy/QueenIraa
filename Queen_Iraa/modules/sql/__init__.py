@@ -33,12 +33,8 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 import os
 
-from Queen_Iraa import DATABASE_URL
+from Queen_Iraa import DB_URL
 
-#code from Queen Iraa
-DB_URL = os.getenv("DATABASE_URL")  # or other relevant config var
-if DB_URL and DB_URL.startswith("postgres://"):
-    DB_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 def start() -> scoped_session:
     engine = create_engine(DB_URL, client_encoding="utf8")
