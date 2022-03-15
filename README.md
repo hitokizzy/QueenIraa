@@ -1,2 +1,2 @@
 
-https://heroku.com/deploy?template=https://github.com/SangeSquad/QueenIraa
+https://heroku.com/deploy?template=https://github.com/SangeanSquad/QueenIraa
