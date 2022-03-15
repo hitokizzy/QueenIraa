@@ -318,7 +318,7 @@ ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
 print("[QUEENIRAA]: Connecting To GEEZ/RAM • Queen_Iraa Userbot (t.me/ramsupportt)")
 timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
-await session.close()
+
 
 async def get_entity(client, entity):
     entity_client = client
