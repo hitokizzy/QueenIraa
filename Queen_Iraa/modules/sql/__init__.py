@@ -33,19 +33,15 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 import os
 
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import scoped_session, sessionmaker
-
-from EmikoRobot import DB_URL
+from EmikoRobot import DATABASE_URL
 
 #code from Queen Iraa
-DB_URL = os.getenv("DATABASE_URL")  # or other relevant config var
-if DB_URL and DB_URL.startswith("postgres://"):
-    DB_URL = DB_URL.replace("postgres://", "postgresql://", 1)
+DATABASE_URL = os.getenv("DATABASE_URL")  # or other relevant config var
+if DATABASE_URL and DATABASE_URL.startswith("postgres://"):
+    DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)
 
 def start() -> scoped_session:
-    engine = create_engine(DB_URL, client_encoding="utf8")
+    engine = create_engine(DATABASE_URL, client_encoding="utf8")
     BASE.metadata.bind = engine
     BASE.metadata.create_all(engine)
     return scoped_session(sessionmaker(bind=engine, autoflush=True))
@@ -53,12 +49,4 @@ def start() -> scoped_session:
 
 BASE = declarative_base()
 SESSION = start()
-def start() -> scoped_session:
-    engine = create_engine(DB_URL, client_encoding="utf8")
-    BASE.metadata.bind = engine
-    BASE.metadata.create_all(engine)
-    return scoped_session(sessionmaker(bind=engine, autoflush=False))
 
-
-BASE = declarative_base()
-SESSION = start()
