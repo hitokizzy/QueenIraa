@@ -106,7 +106,7 @@ buttons = [
 geezram_IMG = "https://telegra.ph/file/3b757c3986ec72f09096c.jpg"
 
 HELP_STRINGS = """
-GEEZ/RAM BOT ‌ٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖ *Features*\n*» ᴄʜᴇᴄᴋᴏᴜᴛ ᴀʟʟ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs*\n*» Gunakan / atau ! untuk command*\n*»*\n\n*ㅤㅤㅤㅤㅤㅤ» Perintah Dasar «*\n\n➲ /start : *Start .*\n➲ /Donasi : *Semua karya Geez/Ram adalah gratis, jika anda diminta bayaran berati anda tertipu.*\n➲ /help  : *Command yg tersedia.*\n*  ‣ PM : Saya akan kirimkan semua command.*\n*  ‣ Group : Saya akan kirimkan melalu PM, Semua module yang tersedia.*\n\n*» Untuk command lainnya, silahkan klik tombol dibawah «* """
+GEEZ/RAM BOT ‌ٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖ *Features*\n*» Module command tersedia*\n*» Gunakan / atau ! untuk command*\n*»*\n\n*ㅤㅤㅤㅤㅤㅤ» Perintah Dasar «*\n\n➲ /start : *Start .*\n➲ /Donasi : *Semua karya Geez/Ram adalah gratis, jika anda diminta bayaran berati anda tertipu.*\n➲ /help  : *Command yg tersedia.*\n*  ‣ PM : Saya akan kirimkan semua command.*\n*  ‣ Group : Saya akan kirimkan melalu PM, Semua module yang tersedia.*\n\n*» Untuk command lainnya, silahkan klik tombol dibawah «* """
 
 DONATE_STRING = """Sedekah dan Beramal ke Masjid/mushola terdekat"""
 
@@ -218,7 +218,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ !\n<b>ɪ ᴅɪᴅɴ'ᴛ sʟᴇᴘᴛ sɪɴᴄᴇ​:</b> <code>{}</code>".format(
+            "Saya Online!\n<b>Uptime​:</b> <code>{}</code>".format(
                 uptime
             ),
             parse_mode=ParseMode.HTML,
@@ -297,7 +297,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "» *ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs ꜰᴏʀ​​* *{}* :\n".format(
+                "» *Perintah tersedia​​* *{}* :\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -351,20 +351,20 @@ def help_button(update, context):
 @run_async
 def Fallen_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
-    if query.data == "fallen_":
+    if query.data == "geezram_":
         query.message.edit_text(
-            text="""*👋 ʜᴇʟʟᴏ ʙᴀʙʏ​,\n          ɪ ᴀᴍ *[𝗙𝝙𝗟𝗟𝝣𝗡 ✘ 𝗥𝗢𝗕𝗢𝗧 ‌ٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖ](t.me/FallenXRobot)\n                  [𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](tg://user?id=1356469075) *ɪs ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ* \n\n*ᴀ ᴘᴏᴡᴇʀꜰᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀꜱɪʟʏ ᴀɴᴅ ᴛᴏ ᴘʀᴏᴛᴇᴄᴛ ʏᴏᴜʀ ɢʀᴏᴜᴘ ꜰʀᴏᴍ ꜱᴄᴀᴍᴍᴇʀꜱ ᴀɴᴅ ꜱᴘᴀᴍᴍᴇʀꜱ. *\n\nɪ ʜᴀᴠᴇ ᴛʜᴇ ɴᴏʀᴍᴀʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢɪɴɢ ꜰᴜɴᴄᴛɪᴏɴꜱ ʟɪᴋᴇ ꜰʟᴏᴏᴅ ᴄᴏɴᴛʀᴏʟ, ᴀ ᴡᴀʀɴɪɴɢ ꜱʏꜱᴛᴇᴍ ᴇᴛᴄ ʙᴜᴛ ɪ ᴍᴀɪɴʟʏ ʜᴀᴠᴇ ᴛʜᴇ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴅ ʜᴀɴᴅʏ ᴀɴᴛɪꜱᴘᴀᴍ ꜱʏꜱᴛᴇᴍ ᴀɴᴅ ᴛʜᴇ ʙᴀɴɴɪɴɢ ꜱʏꜱᴛᴇᴍ ᴡʜɪᴄʜ ꜱᴀꜰᴇɢᴀᴜʀᴅꜱ ᴀɴᴅ ʜᴇʟᴘꜱ ʏᴏᴜʀ ɢʀᴏᴜᴘ ꜰʀᴏᴍ ꜱᴘᴀᴍᴍᴇʀꜱ.\n\n🙋🏻 ᴡʜᴀᴛ ᴄᴀɴ ɪ ᴅᴏ :\n\n➲  ɪ ᴄᴀɴ ʀᴇꜱᴛʀɪᴄᴛ ᴜꜱᴇʀꜱ.\n\n➲  ɪ ᴄᴀɴ ɢʀᴇᴇᴛ ᴜꜱᴇʀꜱ ᴡɪᴛʜ ᴄᴜꜱᴛᴏᴍɪᴢᴀʙʟᴇ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇꜱꜱᴀɢᴇꜱ ᴀɴᴅ ᴇᴠᴇɴ ꜱᴇᴛ ᴀ ɢʀᴏᴜᴘ'ꜱ ʀᴜʟᴇꜱ.\n\n➲  ɪ ᴄᴀɴ ᴡᴀʀɴ ᴜꜱᴇʀꜱ ᴜɴᴛɪʟ ᴛʜᴇʏ ʀᴇᴀᴄʜ ᴍᴀx ᴡᴀʀɴꜱ, ᴡɪᴛʜ ᴇᴀᴄʜ ᴘʀᴇᴅᴇꜰɪɴᴇᴅ ᴀᴄᴛɪᴏɴꜱ ꜱᴜᴄʜ ᴀꜱ ʙᴀɴ, ᴍᴜᴛᴇ, ᴋɪᴄᴋ, ᴇᴛᴄ.\n\n➲  ɪ ʜᴀᴠᴇ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴛɪ-ꜰʟᴏᴏᴅ ꜱʏꜱᴛᴇᴍ.\n\n➲  ɪ ʜᴀᴠᴇ ᴀ ɴᴏᴛᴇ ᴋᴇᴇᴘɪɴɢ ꜱʏꜱᴛᴇᴍ, ʙʟᴀᴄᴋʟɪꜱᴛꜱ, ᴀɴᴅ ᴇᴠᴇɴ ᴘʀᴇᴅᴇᴛᴇʀᴍɪɴᴇᴅ ʀᴇᴘʟɪᴇꜱ ᴏɴ ᴄᴇʀᴛᴀɪɴ ᴋᴇʏᴡᴏʀᴅꜱ.\n\n➲  ɪ ᴄʜᴇᴄᴋ ꜰᴏʀ ᴀᴅᴍɪɴꜱ ᴘᴇʀᴍɪꜱꜱɪᴏɴꜱ ʙᴇꜰᴏʀᴇ ᴇxᴇᴄᴜᴛɪɴɢ ᴀɴʏ ᴄᴏᴍᴍᴀɴᴅ ᴀɴᴅ ᴍᴏʀᴇ ꜱᴛᴜꜰꜰꜱ.\n\n\n* ɪꜰ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇꜱᴛɪᴏɴ ᴀʙᴏᴜᴛ 𝗙𝝙𝗟𝗟𝝣𝗡 ✘ 𝗥𝗢𝗕𝗢𝗧 ᴛʜᴇɴ ᴄᴏɴᴛᴀᴄᴛ ᴜꜱ ᴀᴛ *[ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](t.me/DevilsHeavenMF) *ᴀɴᴅ ᴛᴏ ᴋᴇᴇᴘ ʏᴏᴜʀꜱᴇʟꜰ ᴜᴘᴅᴀᴛᴇᴅ ᴀʙᴏᴜᴛ ʙᴏᴛ ᴊᴏɪɴ ᴛʜᴇ *[ᴅᴇᴠɪʟsʜᴇᴀᴠᴇɴᴍꜰ​](t.me/DevilsHeavenMF)""",
+            text="""*👋 Hallo​,\n          saya *[Geez/Ram](t.me/geezrambot)\n\n\n*Group Manage Bot yang di maintenance oleh Geez/Ram, untuk kebutuhan Group anda. *\n\nSaya di buat berdasarkan Queen Iraa bot, saya punya system anti flood, banned dan banyak lagi fitu lain nya untuk keamanan group kamu.\n\n🙋🏻 diantaranya :\n\n➲  saya bisa menghalau spammer masuk ke group.\n\n➲  welcoming, rules, notes.\n\n➲  Dan banyak lagi yang lainnya""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="◁", callback_data="fallen_back")
+                    InlineKeyboardButton(text="◁", callback_data="geezram_back")
                  ]
                 ]
             ),
         )
-    elif query.data == "fallen_back":
+    elif query.data == "geezram_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -379,7 +379,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text="""*ʜᴇʏ,\n\nɪ ᴀᴍ *𝗙𝝙𝗟𝗟𝝣𝗡 ✘ 𝗥𝗢𝗕𝗢𝗧 ‌ٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖٖٖٜٖٖٖٖ\n\n*ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs ɪɴ ᴅᴇᴠᴇʟᴏᴘᴍᴇɴᴛ ᴀɴᴅ ɴᴏᴛ ᴄᴏᴍᴘʟᴇᴛᴇᴅ ʏᴇᴛ*\n*ɪꜰ ʏᴏᴜ sᴛɪʟʟ ᴡᴀɴᴛ ᴛᴏ ɢᴇᴛ ɪᴛ ʏᴏᴜ ᴄᴀɴ​ ᴀsᴋ ɪᴛ ɪɴ *@DevilsHeavenMF *ᴏʀ ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ* [𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](tg://user?id=1356469075)""",
+            text="""*Hallo,\n\n\n\n*Source code dan repo saya masih dalam pengembangan*\n*silahkan join @GeezSupport dan @ramsupportt """,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=False,
             reply_markup=InlineKeyboardMarkup(
