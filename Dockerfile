@@ -1,5 +1,5 @@
 # We're using Debian Slim Buster image
-FROM python:3.10.2-slim-buster
+FROM python:3.8.5-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -62,18 +62,19 @@ RUN apt update && apt upgrade -y && \
     && rm -rf /var/lib/apt/lists /var/cache/apt/archives /tmp
 
 # Pypi package Repo upgrade
-RUN apt-get install -y ffmpeg python3-pip curl
 RUN pip3 install --upgrade pip setuptools
 
-ENV PATH="/home/bot/bin:$PATH"
+# Copy Python Requirements to /root/geezram
+RUN git clone -b shiken https://github.com/AnonymousBoy1025/geezram /root/geezram
+WORKDIR /root/geezram
 
-# make directory
-RUN mkdir /Queen_Iraa/
-COPY . /Queen_Iraa
-WORKDIR /Queen_Iraa
+#Copy config file to /root/geezram/geezram
+COPY ./geezram/sample_config.py ./geezram/config.py* /root/geezram/geezram/
+
+ENV PATH="/home/bot/bin:$PATH"
 
 # Install requirements
 RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
-CMD ["python3","-m","Queen_Iraa"]
+CMD ["python3","-m","geezram"]
