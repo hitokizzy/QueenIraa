@@ -11,14 +11,14 @@ from PIL import Image
 import io
 
 caption = """
-» ʟᴏɢᴏ sᴜᴄᴄᴇssꜰᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ ʙᴀʙʏ​ «
+» Logo Berhasil dibuat «
 `◇───────────────◇`
-💔 **ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ** : [ᴀɴᴏɴʏᴍᴏᴜs](https://t.me/FallenXRobot)
+💔 **ɢᴇɴᴇʀᴀᴛᴇᴅ ʙʏ ** : [geezram](https://t.me/geezrambot)
 😇 **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ ​** : {}
-💕 **ᴘᴏᴡᴇʀᴇᴅ ʙʏ​ **  : [𝝙𝗡𝗢𝗡𝗬𝗠𝗢𝗨𝗦](https://t.me/anonymous_was_bot)
+💕 **ᴘᴏᴡᴇʀᴇᴅ ʙʏ​ **  : GEEZ & RAM
 `◇───────────────◇️  `
     """
-JOIN_ASAP = f" **🚫 Access Denied**\n\n You have to join [My Group](https://t.me/DevilsHeavenMF) to use me. So, please join it & Try Again." 
+JOIN_ASAP = f" **🚫 Akses Ditolak**\n\n silahkan bergabung [Geez](https://t.me/GeezSupport) [Ram](https://t.me/ramsupportt). silahkan bergabung lalu coba lagi." 
 FSUBB = InlineKeyboardMarkup( 
            [[ 
                InlineKeyboardButton(text="• Group • ", url=f"https://t.me/DevilsHeavenMF") 
@@ -41,7 +41,13 @@ def get_text(message: Message) -> [None, str]:
 @app.on_message(filters.command("logo") & ~filters.bot)
 async def logo(client, message):      
  try:
-        await message._client.get_chat_member(int("-1001686672798"), message.from_user.id)
+        await message._client.get_chat_member(int("-1001459812644"), message.from_user.id)
+ except UserNotParticipant:
+        await message.reply_text(
+        text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
+    )
+ try:
+        await message._client.get_chat_member(int("-1001692751821"), message.from_user.id)
  except UserNotParticipant:
         await message.reply_text(
         text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
@@ -58,7 +64,7 @@ async def logo(client, message):
     randc = (LOGO_API)
     img = Image.open(io.BytesIO(requests.get(randc).content))
     murl = requests.get(f"https://api.single-developers.software/logo?name={text}").history[1].url
-    fname = "anonymous.png"
+    fname = "queeniraa.png"
     img.save(fname, "png")
     await client.send_photo(message.chat.id, photo=murl, caption = caption.format(message.from_user.mention),
                  reply_markup=InlineKeyboardMarkup(
@@ -81,7 +87,13 @@ async def logo(client, message):
 @app.on_message(filters.command("logohq"))
 async def on_off_antiarab(_, message: Message):
     try:
-        await message._client.get_chat_member(int("-1001686672798"), message.from_user.id)
+        await message._client.get_chat_member(int("-1001692751821"), message.from_user.id)
+    except UserNotParticipant:
+        await message.reply_text(
+        text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
+        )
+    try:
+        await message._client.get_chat_member(int("-1001459812644"), message.from_user.id)
     except UserNotParticipant:
         await message.reply_text(
         text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
@@ -106,11 +118,17 @@ async def on_off_antiarab(_, message: Message):
 @app.on_message(filters.command("write"))
 async def on_off_antiarab(_, message: Message):
     try:
-        await message._client.get_chat_member(int("-1001686672798"), message.from_user.id)
+        await message._client.get_chat_member(int("-1001692751821"), message.from_user.id)
     except UserNotParticipant:
         await message.reply_text(
         text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
-    )
+        )
+    try:
+        await message._client.get_chat_member(int("-1001459812644"), message.from_user.id)
+    except UserNotParticipant:
+        await message.reply_text(
+        text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
+    )    
         return 
     text = message.text.split(None, 1)[1]
     m = await app.send_message(message.chat.id, "`⚙️ Writing Your text...`")
@@ -136,7 +154,13 @@ async def on_off_antiarab(_, message: Message):
 @app.on_message(filters.command("wall"))
 async def on_off_antiarab(_, message: Message):
     try:
-        await message._client.get_chat_member(int("-1001686672798"), message.from_user.id)
+        await message._client.get_chat_member(int("-1001692751821"), message.from_user.id)
+    except UserNotParticipant:
+        await message.reply_text(
+        text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
+        )
+    try:
+        await message._client.get_chat_member(int("-1001459812644"), message.from_user.id)
     except UserNotParticipant:
         await message.reply_text(
         text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
@@ -161,7 +185,13 @@ async def on_off_antiarab(_, message: Message):
 @app.on_message(filters.command("glogo"))
 async def on_off_antiarab(_, message: Message):
     try:
-        await message._client.get_chat_member(int("-1001686672798"), message.from_user.id)
+        await message._client.get_chat_member(int("-1001692751821"), message.from_user.id)
+    except UserNotParticipant:
+        await message.reply_text(
+        text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
+        )
+    try:
+        await message._client.get_chat_member(int("-1001459812644"), message.from_user.id)
     except UserNotParticipant:
         await message.reply_text(
         text=JOIN_ASAP, disable_web_page_preview=True, reply_markup=FSUBB
@@ -198,6 +228,6 @@ __f__ = """
 ×  /slogo [TEXT] : New Beautiful trending logo
 
 
-Logo Maker is Powered by @SingleDevelopers & @MrItzme
+Logo Maker is Powered by @GeezSupport @ramsupportt
  """
 __mod_name__ = "Lavda"
