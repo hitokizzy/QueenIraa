@@ -11,15 +11,18 @@ from geezram import telethn as tbot
 
 
 PHOTO = [
- "https://telegra.ph/file/3b757c3986ec72f09096c.jpg"
+ "https://telegra.ph/file/3b757c3986ec72f09096c.jpg",
+ "https://telegra.ph/file/b095fea86f234dd53f762.jpg",
+ "https://telegra.ph/file/f6f81a6b5b44d8d4fa46e.jpg",
+
 ]
 
 @register(pattern=("/alive"))
 async def awake(event):
   TEXT = f"**Hallo [{event.sender.first_name}](tg://user?id={event.sender.id}),\n\nsaya Queen Iraa​.**\n━━━━━━━━━━━━━━━━━━━\n\n"
-  TEXT += f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ : [GEEZ/RAM](https://t.me/xnxx)** \n\n"
-  TEXT += f"» **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{telever}` \n\n"
-  TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n\n"
+  TEXT += f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ : [GEEZ/RAM](https://t.me/xnxx)** \n"
+  TEXT += f"» **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{telever}` \n"
+  TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n"
   TEXT += f"» **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ :** `{pyrover}` \n━━━━━━━━━━━━━━━━━\n\n"
   BUTTON = [[Button.url("RAM", "https://t.me/ramsupportt?start=help"), Button.url("GEEZ", "https://t.me/GeezSupport")]]
   ran = random.choice(PHOTO)
