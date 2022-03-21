@@ -1,6 +1,6 @@
 import geezram.modules.sql.blacklistusers_sql as sql
 from geezram import ALLOW_EXCL
-from geezram import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
+from geezram import DEV_USERS, GEEZ, DEMONS, TIGERS, WOLVES
 
 from telegram import Update
 from telegram.ext import CommandHandler, MessageHandler, RegexHandler, Filters
@@ -22,7 +22,7 @@ class AntiSpam:
     def __init__(self):
         self.whitelist = (
             (DEV_USERS or [])
-            + (DRAGONS or [])
+            + (GEEZ or [])
             + (WOLVES or [])
             + (DEMONS or [])
             + (TIGERS or [])

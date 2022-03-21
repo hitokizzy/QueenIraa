@@ -4,7 +4,7 @@ import geezram.modules.sql.blacklistusers_sql as sql
 from geezram import (
     DEV_USERS,
     OWNER_ID,
-    DRAGONS,
+    GEEZ,
     DEMONS,
     TIGERS,
     WOLVES,
@@ -21,7 +21,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
 
-BLACKLISTWHITELIST = [OWNER_ID] + DEV_USERS + DRAGONS + WOLVES + DEMONS
+BLACKLISTWHITELIST = [OWNER_ID] + DEV_USERS + GEEZ + WOLVES + DEMONS
 BLABLEUSERS = [OWNER_ID] + DEV_USERS
 
 
@@ -144,7 +144,7 @@ def __user_info__(user_id):
         return ""
     if user_id == dispatcher.bot.id:
         return ""
-    if int(user_id) in DRAGONS + TIGERS + WOLVES:
+    if int(user_id) in GEEZ + TIGERS + WOLVES:
         return ""
     if is_blacklisted:
         text = text.format("Yes")

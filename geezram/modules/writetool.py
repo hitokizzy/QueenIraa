@@ -18,10 +18,13 @@ caption = """
 💕 **ᴘᴏᴡᴇʀᴇᴅ ʙʏ​ **  : GEEZ & RAM
 `◇───────────────◇️  `
     """
-JOIN_ASAP = f" **🚫 Akses Ditolak**\n\n silahkan bergabung [Geez](https://t.me/GeezSupport) [Ram](https://t.me/ramsupportt). silahkan bergabung lalu coba lagi." 
+JOIN_ASAP = f" **🚫 Akses Ditolak**\n\n silahkan bergabung [Geez](https://t.me/GeezSupport) dan [Ram](https://t.me/ramsupportt). silahkan bergabung lalu coba lagi." 
 FSUBB = InlineKeyboardMarkup( 
            [[ 
-               InlineKeyboardButton(text="• Group • ", url=f"https://t.me/DevilsHeavenMF") 
+               InlineKeyboardButton(text="Geez", url=f"https://t.me/GeezSupport") 
+           ]] 
+           [[ 
+               InlineKeyboardButton(text="Ram", url=f"https://t.me/ramsupportt") 
            ]] 
 )
 
@@ -80,7 +83,7 @@ async def logo(client, message):
     if os.path.exists(fname):
             os.remove(fname)
  except Exception as e:
-    await client.send_message(message.chat.id, f'Error, Report @DevilsHeavenMF, {e}')
+    await client.send_message(message.chat.id, f'Error, Report @GeezSupport @ramsupport, {e}')
     await m.delete()
 
 #hq logo creator

@@ -6,7 +6,7 @@ from typing import Optional
 from geezram import (
     DEV_USERS,
     OWNER_ID,
-    DRAGONS,
+    GEEZ,
     SUPPORT_CHAT,
     DEMONS,
     TIGERS,
@@ -72,7 +72,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
+    if user_id in GEEZ:
         message.reply_text("This member is already a Dragon Disaster")
         return ""
 
@@ -87,7 +87,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         WOLVES.remove(user_id)
 
     data["sudos"].append(user_id)
-    DRAGONS.append(user_id)
+    GEEZ.append(user_id)
 
     with open(ELEVATED_USERS_FILE, "w") as outfile:
         json.dump(data, outfile, indent=4)
@@ -134,10 +134,10 @@ def addsupport(
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
+    if user_id in GEEZ:
         rt += "Requested HA to demote this Dragon to Demon"
         data["sudos"].remove(user_id)
-        DRAGONS.remove(user_id)
+        GEEZ.remove(user_id)
 
     if user_id in DEMONS:
         message.reply_text("This user is already a Demon Disaster.")
@@ -190,10 +190,10 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
+    if user_id in GEEZ:
         rt += "This member is a Dragon Disaster, Demoting to Wolf."
         data["sudos"].remove(user_id)
-        DRAGONS.remove(user_id)
+        GEEZ.remove(user_id)
 
     if user_id in DEMONS:
         rt += "This user is already a Demon Disaster, Demoting to Wolf."
@@ -246,10 +246,10 @@ def addtiger(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
+    if user_id in GEEZ:
         rt += "This member is a Dragon Disaster, Demoting to Tiger."
         data["sudos"].remove(user_id)
-        DRAGONS.remove(user_id)
+        GEEZ.remove(user_id)
 
     if user_id in DEMONS:
         rt += "This user is already a Demon Disaster, Demoting to Tiger."
@@ -306,9 +306,9 @@ def removesudo(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
+    if user_id in GEEZ:
         message.reply_text("Requested HA to demote this user to Civilian")
-        DRAGONS.remove(user_id)
+        GEEZ.remove(user_id)
         data["sudos"].remove(user_id)
 
         with open(ELEVATED_USERS_FILE, "w") as outfile:
@@ -519,7 +519,7 @@ def sudolist(update: Update, context: CallbackContext):
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
-    true_sudo = list(set(DRAGONS) - set(DEV_USERS))
+    true_sudo = list(set(GEEZ) - set(DEV_USERS))
     reply = "<b>Known Dragon Disasters 🐉:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
@@ -556,7 +556,7 @@ Commands listed here only work for users with special access are mainly used for
 Group admins/group owners do not need these commands. 
 
 *List all special users:*
- ❍ /dragons*:* Lists all Dragon disasters
+ ❍ /GEEZ*:* Lists all Dragon disasters
  ❍ /demons*:* Lists all Demon disasters
  ❍ /tigers*:* Lists all Tigers disasters
  ❍ /wolves*:* Lists all Wolf disasters
@@ -660,7 +660,7 @@ UNWHITELIST_HANDLER = CommandHandler(("removewhitelist", "removewolf"), removewh
 WHITELISTLIST_HANDLER = CommandHandler(["whitelistlist", "wolves"], whitelistlist)
 TIGERLIST_HANDLER = CommandHandler(["tigers"], tigerlist)
 SUPPORTLIST_HANDLER = CommandHandler(["supportlist", "demons"], supportlist)
-SUDOLIST_HANDLER = CommandHandler(["sudolist", "dragons"], sudolist)
+SUDOLIST_HANDLER = CommandHandler(["sudolist", "GEEZ"], sudolist)
 DEVLIST_HANDLER = CommandHandler(["devlist", "heroes"], devlist)
 
 dispatcher.add_handler(SUDO_HANDLER)

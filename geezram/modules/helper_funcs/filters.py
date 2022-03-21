@@ -1,4 +1,4 @@
-from geezram import DEV_USERS, DRAGONS, DEMONS
+from geezram import DEV_USERS, GEEZ, DEMONS
 from telegram import Message
 from telegram.ext import BaseFilter
 
@@ -12,7 +12,7 @@ class CustomFilters(object):
 
     class _Sudoers(BaseFilter):
         def filter(self, message: Message):
-            return bool(message.from_user and message.from_user.id in DRAGONS)
+            return bool(message.from_user and message.from_user.id in GEEZ)
 
     sudo_filter = _Sudoers()
 

@@ -11,7 +11,7 @@ from geezram import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
-    DRAGONS,
+    GEEZ,
     DEMONS,
     TIGERS,
     WOLVES,
@@ -213,7 +213,7 @@ def new_member(update: Update, context: CallbackContext):
                 continue
 
             # Welcome Sudos
-            elif new_mem.id in DRAGONS:
+            elif new_mem.id in GEEZ:
                 update.effective_message.reply_text(
                     "Whoa! A Dragon disaster just joined! Stay Alert!",
                     reply_to_message_id=reply,

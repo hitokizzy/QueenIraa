@@ -1,6 +1,6 @@
 import html
 
-from geezram import LOGGER, DRAGONS, TIGERS, WOLVES, dispatcher
+from geezram import LOGGER, GEEZ, TIGERS, WOLVES, dispatcher
 from geezram.modules.helper_funcs.chat_status import user_admin, user_not_admin
 from geezram.modules.log_channel import loggable
 from geezram.modules.sql import reporting_sql as sql
@@ -17,7 +17,7 @@ from telegram.ext import (
 from telegram.utils.helpers import mention_html
 
 REPORT_GROUP = 12
-REPORT_IMMUNE_USERS = DRAGONS + TIGERS + WOLVES
+REPORT_IMMUNE_USERS = GEEZ + TIGERS + WOLVES
 
 
 @run_async

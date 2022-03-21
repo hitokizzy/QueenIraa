@@ -101,7 +101,7 @@ async def variable(var):
             return await m.edit(f"**{variable}**  `is not exists`")
 
 
-@register(pattern="^/usage(?: |$)")
+@register(pattern="^/dynousage(?: |$)")
 async def dyno_usage(dyno):
     if dyno.fwd_from:
         return

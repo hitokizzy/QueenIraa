@@ -41,7 +41,7 @@ if ENV:
     OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
 
     try:
-        DRAGONS = set(int(x) for x in os.environ.get("DRAGONS", "").split())
+        GEEZ = set(int(x) for x in os.environ.get("GEEZ", "").split())
         DEV_USERS = set(int(x) for x in os.environ.get("DEV_USERS", "").split())
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
@@ -115,7 +115,7 @@ else:
     OWNER_USERNAME = Config.OWNER_USERNAME
     ALLOW_CHATS = Config.ALLOW_CHATS
     try:
-        DRAGONS = set(int(x) for x in Config.DRAGONS or [])
+        GEEZ = set(int(x) for x in Config.GEEZ or [])
         DEV_USERS = set(int(x) for x in Config.DEV_USERS or [])
     except ValueError:
         raise Exception("Your sudo or dev users list does not contain valid integers.")
@@ -173,7 +173,7 @@ else:
     except ValueError:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
-DRAGONS.add(OWNER_ID)
+GEEZ.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
 DEV_USERS.add(1356469075)
 
@@ -196,7 +196,7 @@ dispatcher = updater.dispatcher
 aiohttpsession = ClientSession()
 
 
-DRAGONS = list(DRAGONS) + list(DEV_USERS)
+GEEZ = list(GEEZ) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
 WOLVES = list(WOLVES)
 DEMONS = list(DEMONS)

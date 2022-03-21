@@ -21,7 +21,7 @@ from geezram import (
     EVENT_LOGS,
     OWNER_ID,
     STRICT_GBAN,
-    DRAGONS,
+    GEEZ,
     SUPPORT_CHAT,
     SPAMWATCH_SUPPORT_CHAT,
     DEMONS,
@@ -95,7 +95,7 @@ def gban(update: Update, context: CallbackContext):
         )
         return
 
-    if int(user_id) in DRAGONS:
+    if int(user_id) in GEEZ:
         message.reply_text(
             "I spy, with my little eye... a disaster! Why are you guys turning on each other?"
         )
@@ -201,7 +201,7 @@ def gban(update: Update, context: CallbackContext):
             )
 
     else:
-        send_to_list(bot, DRAGONS + DEMONS, log_message, html=True)
+        send_to_list(bot, GEEZ + DEMONS, log_message, html=True)
 
     sql.gban_user(user_id, user_chat.username or user_chat.first_name, reason)
 
@@ -232,7 +232,7 @@ def gban(update: Update, context: CallbackContext):
                     )
                 else:
                     send_to_list(
-                        bot, DRAGONS + DEMONS, f"Could not gban due to: {excp.message}"
+                        bot, GEEZ + DEMONS, f"Could not gban due to: {excp.message}"
                     )
                 sql.ungban_user(user_id)
                 return
@@ -247,7 +247,7 @@ def gban(update: Update, context: CallbackContext):
     else:
         send_to_list(
             bot,
-            DRAGONS + DEMONS,
+            GEEZ + DEMONS,
             f"Gban complete! (User banned in <code>{gbanned_chats}</code> chats)",
             html=True,
         )
@@ -330,7 +330,7 @@ def ungban(update: Update, context: CallbackContext):
                 + "\n\nFormatting has been disabled due to an unexpected error.",
             )
     else:
-        send_to_list(bot, DRAGONS + DEMONS, log_message, html=True)
+        send_to_list(bot, GEEZ + DEMONS, log_message, html=True)
 
     chats = get_user_com_chats(user_id)
     ungbanned_chats = 0
@@ -375,7 +375,7 @@ def ungban(update: Update, context: CallbackContext):
             parse_mode=ParseMode.HTML,
         )
     else:
-        send_to_list(bot, DRAGONS + DEMONS, "un-gban complete!")
+        send_to_list(bot, GEEZ + DEMONS, "un-gban complete!")
 
     end_time = time.time()
     ungban_time = round((end_time - start_time), 2)
@@ -516,7 +516,7 @@ def __user_info__(user_id):
         return ""
     if user_id == dispatcher.bot.id:
         return ""
-    if int(user_id) in DRAGONS + TIGERS + WOLVES:
+    if int(user_id) in GEEZ + TIGERS + WOLVES:
         return ""
     if is_gbanned:
         text = text.format("Yes")

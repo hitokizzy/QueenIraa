@@ -10,7 +10,7 @@ from telegram.utils.helpers import mention_html
 from alphabet_detector import AlphabetDetector
 
 import geezram.modules.sql.locks_sql as sql
-from geezram import dispatcher, DRAGONS, LOGGER
+from geezram import dispatcher, GEEZ, LOGGER
 from geezram.modules.disable import DisableAbleCommandHandler
 from geezram.modules.helper_funcs.chat_status import (
     can_delete,
@@ -98,7 +98,7 @@ def restr_members(
     bot, chat_id, members, messages=False, media=False, other=False, previews=False
 ):
     for mem in members:
-        if mem.user in DRAGONS:
+        if mem.user in GEEZ:
             pass
         try:
             bot.restrict_chat_member(

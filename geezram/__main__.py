@@ -674,7 +674,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "ᴏᴍꜰᴏ ! ᴍᴇ ɪᴢ ᴅᴇᴅ ʙᴀʙʏ​ ¡ 💔")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "koneksi ke support chat terputus")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
@@ -720,7 +720,7 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info("KALO ANDA BACA TULISAN INI TANDANYA QUEEN IRA SUDAH AKTIF.")
+        LOGGER.info("Using long polling.")
         updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):

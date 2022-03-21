@@ -6,7 +6,7 @@ from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-from geezram import DRAGONS, dispatcher
+from geezram import GEEZ, dispatcher
 from geezram.modules.disable import DisableAbleCommandHandler
 from geezram.modules.helper_funcs.chat_status import (
     bot_admin,
@@ -175,7 +175,7 @@ def promote(update: Update, context: CallbackContext) -> str:
 
     if (
         not (promoter.can_promote_members or promoter.status == "creator")
-        and user.id not in DRAGONS
+        and user.id not in GEEZ
     ):
         message.reply_text("You don't have the necessary rights to do that!")
         return
@@ -256,7 +256,7 @@ def spromote(update: Update, context: CallbackContext) -> str:
 
     if (
         not (promoter.can_promote_members or promoter.status == "creator")
-        and user.id not in DRAGONS
+        and user.id not in GEEZ
     ):
         message.reply_text("You don't have the necessary rights to do that!")
         return
@@ -333,7 +333,7 @@ def fullpromote(update: Update, context: CallbackContext) -> str:
 
     if (
         not (promoter.can_promote_members or promoter.status == "creator")
-        and user.id not in DRAGONS
+        and user.id not in GEEZ
     ):
         message.reply_text("You don't have the necessary rights to do that!")
         return
@@ -631,7 +631,7 @@ def unpin(update: Update, context: CallbackContext):
 
     if (
         not (unpinner.can_pin_messages or unpinner.status == "creator")
-        and user.id not in DRAGONS
+        and user.id not in GEEZ
     ):
         message.reply_text("You don't have the necessary rights to do that!")
         return

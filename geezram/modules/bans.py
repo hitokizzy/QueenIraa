@@ -9,7 +9,7 @@ from geezram import (
     DEV_USERS,
     LOGGER,
     OWNER_ID,
-    DRAGONS,
+    GEEZ,
     DEMONS,
     TIGERS,
     WOLVES,
@@ -67,7 +67,7 @@ def ban(update: Update, context: CallbackContext) -> str:
             message.reply_text("Trying to put me against a God level disaster huh?")
         elif user_id in DEV_USERS:
             message.reply_text("I can't act against our own.")
-        elif user_id in DRAGONS:
+        elif user_id in GEEZ:
             message.reply_text(
                 "Fighting this Dragon here will put civilian lives at risk."
             )
@@ -362,7 +362,7 @@ def selfunban(context: CallbackContext, update: Update) -> str:
     message = update.effective_message
     user = update.effective_user
     bot, args = context.bot, context.args
-    if user.id not in DRAGONS or user.id not in TIGERS:
+    if user.id not in GEEZ or user.id not in TIGERS:
         return
 
     try:

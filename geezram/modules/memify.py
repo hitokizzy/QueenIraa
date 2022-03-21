@@ -19,7 +19,7 @@ from geezram import (
 from geezram import telethn as bot
 
 
-Credit = "AnonymousBoy1025" 
+Credit = "QueenIraa" 
 
 
 @register(pattern="^/mmf ?(.*)")
@@ -48,7 +48,7 @@ async def handler(event):
 
     msg = await event.reply("```Memifying this image! ✊🏻 ```")
 
-    if "AnonymousBoy1025" in Credit:
+    if "QueenIraa" in Credit:
        pass
 
     else: 
