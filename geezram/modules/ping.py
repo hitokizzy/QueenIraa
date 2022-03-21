@@ -11,9 +11,9 @@ from geezram.modules.disable import DisableAbleCommandHandler
 
 sites_list = {
     "Telegram": "https://api.telegram.org",
-    "Kaizoku": "https://animekaizoku.com",
-    "Kayo": "https://animekayo.com",
-    "Jikan": "https://api.jikan.moe/v3",
+    "pornhub": "https://pornhub.com",
+    "xnxx": "https://xnxx.com",
+    "geez/ram": "https://google.com",
 }
 
 
