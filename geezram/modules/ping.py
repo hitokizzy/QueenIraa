@@ -11,9 +11,9 @@ from geezram.modules.disable import DisableAbleCommandHandler
 
 sites_list = {
     "Telegram": "https://api.telegram.org",
-    "Pornhub": "https://pornhub.com",
+    "Pornhub": "https://prnhub.com",
     "xnxx": "https://xnxx.com",
-    "xhamster": "https://xhamster.com",
+    "xhamster": "https://xhamste.com",
 }
 
 
