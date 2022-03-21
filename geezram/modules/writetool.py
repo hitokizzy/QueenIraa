@@ -22,7 +22,7 @@ JOIN_ASAP = f" **🚫 Akses Ditolak**\n\n silahkan bergabung [Geez](https://t.me
 FSUBB = InlineKeyboardMarkup( 
            [[ 
                InlineKeyboardButton(text="Geez", url=f"https://t.me/GeezSupport") 
-           ]] 
+           ]],
            [[ 
                InlineKeyboardButton(text="Ram", url=f"https://t.me/ramsupportt") 
            ]] 
