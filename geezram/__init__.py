@@ -70,7 +70,7 @@ if ENV:
     API_ID = os.environ.get("API_ID", None)
     API_HASH = os.environ.get("API_HASH", None)
 
-    DB_URI = os.environ.get("DATABASE_URL")
+    DB_URI = "postgres://acrjzwizqiaesb:c564279aaf6d115013c3f294f69f47ffcb4fb221f50c7ad651ba7190d146c740@ec2-54-78-45-84.eu-west-1.compute.amazonaws.com:5432/d5cnb4697ra1rg"
     MONGO_DB_URI = os.environ.get("MONGO_DB_URI", None)
     DONATION_LINK = os.environ.get("DONATION_LINK")
     HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
