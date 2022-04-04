@@ -19,7 +19,7 @@ PHOTO = [
 
 @register(pattern=("/alive"))
 async def awake(event):
-  TEXT = f"**Hallo [{event.sender.first_name}](tg://user?id={event.sender.id}),\n\nsaya Queen Iraa​.**\n━━━━━━━━━━━━━━━━━━━\n\n"
+  TEXT = f"**Hallo [{event.sender.first_name}](tg://user?id={event.sender.id}),\n\nsaya Geez/Ram Robot, Tidak ada yang spesial dari saya... \n Saya di urus dan dibesarkan layaknya anak sendiri para manusia yg tidak seberapa di Geez dan Ram.**\n━━━━━━━━━━━━━━━━━━━\n\n"
   TEXT += f"» **ᴍʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ​ : [GEEZ/RAM](https://t.me/xnxx)** \n"
   TEXT += f"» **ʟɪʙʀᴀʀʏ ᴠᴇʀsɪᴏɴ :** `{telever}` \n"
   TEXT += f"» **ᴛᴇʟᴇᴛʜᴏɴ ᴠᴇʀsɪᴏɴ :** `{tlhver}` \n"
