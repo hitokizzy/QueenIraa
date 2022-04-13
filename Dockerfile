@@ -65,8 +65,8 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/geezram
-RUN git clone -b shiken https://github.com/AnonymousBoy1025/geezram /root/geezram
-WORKDIR /root/geezram
+RUN git clone -b shiken https://github.com/SangeanSquad/QueenIraa /root/QueenIraa
+WORKDIR /root/QueenIraa
 
 #Copy config file to /root/geezram/geezram
 COPY ./geezram/sample_config.py ./geezram/config.py* /root/geezram/geezram/
