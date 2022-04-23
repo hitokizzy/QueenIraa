@@ -64,6 +64,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
                 "{} sudah sadar!",
                 "{} is back online!",
                 "{} is finally here!",
+                "{} bolak-balik terus"
                 
                 
             ]
