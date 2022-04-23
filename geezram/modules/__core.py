@@ -9,7 +9,7 @@ from geezram import OWNER_ID
 from geezram import TEMP_DOWNLOAD_DIRECTORY as path
 from geezram import TEMP_DOWNLOAD_DIRECTORY
 from datetime import datetime
-water = './geezram/resources/fallen.jpg'
+water = './geezram/resources/iraa.jpg'
 client = tbot
 
 @register(pattern=r"^/send ?(.*)")
