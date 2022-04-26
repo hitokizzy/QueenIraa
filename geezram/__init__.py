@@ -3,7 +3,7 @@ import os
 import sys
 import time
 import spamwatch
-
+from telethon.sessions import StringSession
 import telegram.ext as tg
 from aiohttp import ClientSession
 from pyrogram import Client, errors
@@ -93,7 +93,7 @@ if ENV:
     SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get("SPAMWATCH_SUPPORT_CHAT", None)
     SPAMWATCH_API = os.environ.get("SPAMWATCH_API", None)
-
+    STRING_SESSION = os.environ.get("STRING_SESSION", None)
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
 
     try:
@@ -167,7 +167,8 @@ else:
     SPAMWATCH_API = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
-    
+    STRING_SESSION = Config.STRING_SESSION
+
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
     except ValueError:
@@ -199,6 +200,12 @@ pbot = Client("geezram", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 aiohttpsession = ClientSession()
 
+ubot2 = TelegramClient(StringSession(STRING_SESSION), API_ID, API_HASH)
+try:
+    ubot2.start()
+except BaseException:
+    print("Userbot Error! Have you added a STRING_SESSION in deploying??")
+    sys.exit(1)
 
 GEEZ = list(GEEZ) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
